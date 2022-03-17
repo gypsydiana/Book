@@ -7,7 +7,7 @@ void Cathalog::DeleteBookCathalog(string name) {
 	for (int i = 0; i < cathalog.size(); i++) {
 		if (cathalog[i].title == name) {
 			cathalog.erase(cathalog.begin() + i);
-			cout << "Êíèãà " << name << "óäàëåíà";
+			cout << "ÐšÐ½Ð¸Ð³Ð° " << name << "ÑƒÐ´Ð°Ð»ÐµÐ½Ð°";
 		}
 	}
 }
@@ -27,21 +27,21 @@ cathalog_book::cathalog_book(string title, vector<string>authors, unsigned int y
 void Cathalog::Output_id_and_reader(unsigned int id) {
 	for (int i = 0; i < cathalog.size(); i++) {
 		if (cathalog[i].ID == id) {
-			cout << "Íàçâàíèå:" << cathalog[i].title << endl;
-			cout << "Àâòîðû:";
+			cout << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ:" << cathalog[i].title << endl;
+			cout << "ÐÐ²Ñ‚Ð¾Ñ€Ñ‹:";
 			for (int j = 0; j < cathalog[i].authors.size(); j++) {
 				cout << cathalog[i].authors[j]<<" ";
 			}
 			cout << endl;
-			cout << "Ãîä èçäàíèÿ:" << cathalog[i].year << endl;
-			cout << "Èçäàòåëüñòâî:" << cathalog[i].publisher << endl;
-			cout << "Êîëè÷åñòâî ñòðàíèö:" << cathalog[i].pages << endl;
-			cout << "Îáùåå êîëè÷åñòâî ýêçåìïëÿðîâ:" << cathalog[i].quantity << endl;
-			cout << "Êîëè÷åñòâî ýêçåìïëÿðîâ â íàëè÷èè:" << cathalog[i].instances << endl;
-			cout << "Ñïèñîê ÷èòàòåëåé, âçÿâøèõ êíèãó, ñ äàòîé âûäà÷è:" << endl;
+			cout << "Ð“Ð¾Ð´ Ð¸Ð·Ð´Ð°Ð½Ð¸Ñ:" << cathalog[i].year << endl;
+			cout << "Ð˜Ð·Ð´Ð°Ñ‚ÐµÐ»ÑŒÑÑ‚Ð²Ð¾:" << cathalog[i].publisher << endl;
+			cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†:" << cathalog[i].pages << endl;
+			cout << "ÐžÐ±Ñ‰ÐµÐµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐºÐ·ÐµÐ¼Ð¿Ð»ÑÑ€Ð¾Ð²:" << cathalog[i].quantity << endl;
+			cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐºÐ·ÐµÐ¼Ð¿Ð»ÑÑ€Ð¾Ð² Ð² Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ð¸:" << cathalog[i].instances << endl;
+			cout << "Ð¡Ð¿Ð¸ÑÐ¾Ðº Ñ‡Ð¸Ñ‚Ð°Ñ‚ÐµÐ»ÐµÐ¹, Ð²Ð·ÑÐ²ÑˆÐ¸Ñ… ÐºÐ½Ð¸Ð³Ñƒ, Ñ Ð´Ð°Ñ‚Ð¾Ð¹ Ð²Ñ‹Ð´Ð°Ñ‡Ð¸:" << endl;
 			for (int n = 0; n < cathalog[i].picked.size(); n++) {
-				cout << "Èìÿ ÷èòàòåëÿ:" << cathalog[i].picked[n].name << endl;
-				cout << "Äàòà âûäà÷è:" << cathalog[i].picked[n].Day << '.'<< cathalog[i].picked[n].Month<<'.'<< cathalog[i].picked[n].Year<<endl;
+				cout << "Ð˜Ð¼Ñ Ñ‡Ð¸Ñ‚Ð°Ñ‚ÐµÐ»Ñ:" << cathalog[i].picked[n].name << endl;
+				cout << "Ð”Ð°Ñ‚Ð° Ð²Ñ‹Ð´Ð°Ñ‡Ð¸:" << cathalog[i].picked[n].Day << '.'<< cathalog[i].picked[n].Month<<'.'<< cathalog[i].picked[n].Year<<endl;
 			}
 		}
 	}
@@ -54,7 +54,7 @@ void Cathalog::SearchBook(string name, string author) {
 				Author = true;
 			}
 			if(Author && (cathalog[i].title == name)) {
-				cout << "Èäåíòèôèêàòîð â êàòàëîãå:" << cathalog[i].ID << endl;
+				cout << "Ð˜Ð´ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ‚Ð¾Ñ€ Ð² ÐºÐ°Ñ‚Ð°Ð»Ð¾Ð³Ðµ:" << cathalog[i].ID << endl;
 			}
 		}
 	}
@@ -72,7 +72,7 @@ void Cathalog::IssuanceBook(string nametitle, string nname, unsigned int dDay, u
 				this->cathalog[i].picked.push_back(r);
 			}
 			else {
-				cout << "Ê ñîæàëåíèþ, âûáðàííîé êíèãè íåò â íàëè÷èè :(" << endl;
+				cout << "Ðš ÑÐ¾Ð¶Ð°Ð»ÐµÐ½Ð¸ÑŽ, Ð²Ñ‹Ð±Ñ€Ð°Ð½Ð½Ð¾Ð¹ ÐºÐ½Ð¸Ð³Ð¸ Ð½ÐµÑ‚ Ð² Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ð¸ :(" << endl;
 			}
 		}
 	}
@@ -92,7 +92,7 @@ void Cathalog::Return_of_the_book(string nametitle, string nname) {
 }
 void Cathalog::DebtorsReaders(unsigned int dDay, unsigned int mMonth, unsigned int yYear) {
 	for (int i = 0; i < cathalog.size(); i++) {
-		cout << "Çàäîëæíîñòü ïî êíèãå:" << cathalog[i].title << endl;
+		cout << "Ð—Ð°Ð´Ð¾Ð»Ð¶Ð½Ð¾ÑÑ‚ÑŒ Ð¿Ð¾ ÐºÐ½Ð¸Ð³Ðµ:" << cathalog[i].title << endl;
 		for (int j = 0; j < cathalog.size(); j++) {
 			if (yYear - cathalog[i].picked[j].Year>=2) {
 				cout << cathalog[i].picked[j].name << endl;
@@ -106,15 +106,15 @@ void Cathalog::DebtorsReaders(unsigned int dDay, unsigned int mMonth, unsigned i
 						cout << cathalog[i].picked[j].name << endl;
 					}
 					else {
-						cout << "Íåò çàäîëæåííîñòè" << endl;
+						cout << "ÐÐµÑ‚ Ð·Ð°Ð´Ð¾Ð»Ð¶ÐµÐ½Ð½Ð¾ÑÑ‚Ð¸" << endl;
 					}
 				}
 				else {
-					cout << "Íåò çàäîëæåííîñòè" << endl;
+					cout << "ÐÐµÑ‚ Ð·Ð°Ð´Ð¾Ð»Ð¶ÐµÐ½Ð½Ð¾ÑÑ‚Ð¸" << endl;
 				}
 			}
 			else {
-				cout << "Íåò çàäîëæåííîñòè" << endl;
+				cout << "ÐÐµÑ‚ Ð·Ð°Ð´Ð¾Ð»Ð¶ÐµÐ½Ð½Ð¾ÑÑ‚Ð¸" << endl;
 			}
 		}
 	}
